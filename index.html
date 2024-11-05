@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日文音樂歌詞網站範例</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #lyrics {
+            margin: 20px auto;
+            max-width: 600px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .toggle-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>日文音樂歌詞網站範例</h1>
+
+    <!-- 音樂播放器 -->
+    <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/goU1Ei8I8uk" 
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+    </div>
+
+    <!-- 歌詞區塊 -->
+    <div id="lyrics">
+        <p id="kanji-lyrics" style="display: none;">
+            ここに漢字バージョンの歌詞を入力します。
+        </p>
+        <p id="hiragana-lyrics">
+            ここにひらがなバージョンの歌詞を入力します。
+        </p>
+    </div>
+
+    <!-- 平假名切換按鈕 -->
+    <button class="toggle-button" onclick="toggleLyrics()">切換漢字/平假名</button>
+
+    <script>
+        // 切換歌詞顯示
+        function toggleLyrics() {
+            const kanjiLyrics = document.getElementById("kanji-lyrics");
+            const hiraganaLyrics = document.getElementById("hiragana-lyrics");
+
+            if (kanjiLyrics.style.display === "none") {
+                kanjiLyrics.style.display = "block";
+                hiraganaLyrics.style.display = "none";
+            } else {
+                kanjiLyrics.style.display = "none";
+                hiraganaLyrics.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
